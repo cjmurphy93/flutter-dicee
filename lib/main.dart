@@ -5,10 +5,12 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.green[800],
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Dicee'),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blueGrey[900],
+
         ),
         body: DicePage(),
       ),
@@ -33,27 +35,33 @@ class _DicePageState extends State<DicePage> {
       child: Row(
         children: <Widget>[
           Expanded(
-            child: TextButton(
-              onPressed: () {
-                setState(() {
-                  leftDiceNumber = Random().nextInt(6) + 1;
-                  rightDiceNumber = Random().nextInt(6) + 1;
-                });
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  setState(() {
+                    leftDiceNumber = Random().nextInt(6) + 1;
+                    rightDiceNumber = Random().nextInt(6) + 1;
+                  });
 
-              },
-              child: Image.asset('images/dice$leftDiceNumber.png'),
+                },
+                child: Image.asset('images/dice$leftDiceNumber.png'),
+              ),
             ),
           ),
           Expanded(
-            child: TextButton(
-              onPressed: () {
-                setState(() {
-                  leftDiceNumber = Random().nextInt(6) + 1;
-                  rightDiceNumber = Random().nextInt(6) + 1;
-                });
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  setState(() {
+                    leftDiceNumber = Random().nextInt(6) + 1;
+                    rightDiceNumber = Random().nextInt(6) + 1;
+                  });
 
-              },
-              child: Image.asset('images/dice$rightDiceNumber.png'),
+                },
+                child: Image.asset('images/dice$rightDiceNumber.png'),
+              ),
             ),
           ),
         ],
